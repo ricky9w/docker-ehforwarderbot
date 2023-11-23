@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER Jemy Zhang <jemy.zhang@gmail.com>
+MAINTAINER Richard Wang <ricky9wang@gmail.com>
 
 ENV LANG C.UTF-8
 ENV TZ 'Asia/Shanghai'
@@ -15,7 +15,7 @@ RUN apk add --no-cache tzdata ca-certificates \
 RUN apk add --no-cache --virtual .build-deps git build-base gcc python3-dev \
     && pip3 install pysocks ehforwarderbot efb-telegram-master efb-wechat-slave \
     && pip3 install git+https://github.com/zhangzhishan/efb-filter-middleware \
-    && pip3 install git+https://github.com/jemyzhang/efb-sticker2img-middleware \
+    && pip3 install git+https://github.com/ricky9w/efb-sticker2img-middleware \
     && apk del .build-deps
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
