@@ -18,7 +18,7 @@ env:
   # Use docker.io for Docker Hub if empty
   #REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: jemyzhang/ehforwarderbot
+  IMAGE_NAME: ricky9w/ehforwarderbot
 
 
 jobs:
@@ -73,6 +73,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
+          platforms: linux/amd64,linux/arm64,linux/armv7
           context: .
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ env.IMAGE_NAME }}:latest
