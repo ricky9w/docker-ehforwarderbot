@@ -14,8 +14,8 @@ RUN apk add --no-cache tzdata ca-certificates \
        py3-numpy py3-pillow py3-cryptography py3-decorator cairo py3-pip
 RUN apk add --no-cache --virtual .build-deps git build-base gcc python3-dev \
     && pip3 install pysocks ehforwarderbot efb-telegram-master efb-wechat-slave \
-    && pip3 install git+https://github.com/zhangzhishan/efb-filter-middleware \
-    && pip3 install git+https://github.com/ricky9w/efb-sticker2img-middleware \
+    && pip3 install git+https://github.com/ehForwarderBot/efb-msg_blocker-middleware \
+    && pip3 install git+https://github.com/ehForwarderBot/efb-search_msg-middleware \
     && apk del .build-deps
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
