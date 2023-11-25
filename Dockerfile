@@ -15,7 +15,7 @@ RUN apk add --no-cache tzdata ca-certificates \
 RUN apk add --no-cache --virtual .build-deps git build-base gcc python3-dev \
     && pip3 install pysocks ehforwarderbot efb-telegram-master efb-wechat-slave \
     && pip3 install git+https://github.com/ricky9w/efb-search_msg-middleware \
-    && pip3 install git+https://github.com/ricky9w/efb-filter-middleware \
+    && pip3 install git+https://github.com/ehForwarderBot/efb-voice_recog-middleware \
     && apk del .build-deps
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone
